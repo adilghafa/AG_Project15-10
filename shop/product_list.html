@@ -1,0 +1,21 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Café Shop</title>
+</head>
+<body>
+    <h1>Nos cafés</h1>
+    <ul>
+        {% for product in products %}
+        <li>
+            <h2>{{ product.name }}</h2>
+            <p>{{ product.description }}</p>
+            <p>Prix : {{ product.price }} €</p>
+            {% if product.image %}
+                <img src="{{ product.image.url }}" width="150"/>
+            {% endif %}
+        </li>
+        {% endfor %}
+    </ul>
+</body>
+</html>
